@@ -1751,3 +1751,8 @@
   aspect-ratio: 1;
   object-fit: cover;
 }
+.card-link {
+  display: block;           
+  text-decoration: none;    
+  color: inherit;           
+}
