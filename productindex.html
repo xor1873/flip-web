@@ -11,6 +11,7 @@
     <div class="product-page" data-model-id="140:19">
       <div class="group">
         <div class="frame"><img class="image" src="img/image-30.png" /></div>
+        <div class="div-wrapper" id="rent-open">
         <div class="div-wrapper"><div class="text-wrapper">대여하기</div></div>
         <div class="div">비슷한 상품</div>
         <div class="group-2">
@@ -197,5 +198,49 @@
         </div>
       </div>
     </div>
-  </body>
+        <div id="popup-layer"
+       style="
+         position: fixed;
+         inset: 0;
+         background: rgba(0, 0, 0, 0.45);
+         display: none;
+         align-items: center;
+         justify-content: center;
+         z-index: 9999;
+       ">
+    <div style="
+          background: #fff;
+          border-radius: 12px;
+          overflow: hidden;
+          max-width: 480px;
+          width: 90%;
+          max-height: 80%;
+          box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        ">
+      <iframe
+        src="popupindex.html"
+        style="
+          border: none;
+          width: 100%;
+          height: 400px;
+          display: block;
+        "
+      ></iframe>
+    </div>
+  </div>
+       <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var openBtn = document.getElementById('rent-open');
+      var popupLayer = document.getElementById('popup-layer');
+
+      if (openBtn && popupLayer) {
+        openBtn.style.cursor = 'pointer';
+        openBtn.addEventListener('click', function () {
+          popupLayer.style.display = 'flex';  // flex로 가운데 정렬
+        });
+      }
+    });
+  </script>
+</body>
 </html>
+ 
